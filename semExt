@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void selection_sort(int v[], int n){
+    int uns_idx = 0;
+    while(uns_idx < n){
+        int min_idx = uns_idx;
+        for(int i = uns_idx; i< n; i++){
+            if(v[i] < v[min_idx]) min_idx = i;
+        }
+        int aux = v[uns_idx];
+        v[uns_idx] = v[min_idx];
+        v[min_idx] = aux;
+        uns_idx++;
+    }
+}
+
+
+int main() {
+    int vetor[] = {5, 4, 3, 2, 1};
+    selection_sort(vetor, 5);
+    for (int j = 0; j < 5; j++) {
+        printf("%d ", vetor[j]);
+    }
+    printf("\n");
+    return 0;
+}
